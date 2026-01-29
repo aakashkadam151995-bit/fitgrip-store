@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITGRIP - Premium Grip Strengthener</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* ===== SECTION 1: ANNOUNCEMENT BAR ===== */
+        .announcement-bar {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .announcement-bar p {
+            margin: 0;
+        }
+
+        /* ===== SECTION 2: HEADER ===== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b35;
+        }
+
+        .header-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .header-btn:hover {
+            background: #ff5520;
+        }
+
+        /* ===== SECTION 5: HERO BANNER ===== */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 40px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .hero-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* ===== SECTION 6: FEATURES ===== */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 80px 40px;
+            background: #f9f9f9;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ===== SECTION 3: FEATURED PRODUCTS ===== */
+        .products {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #ff6b35;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .product-btn {
+            width: 100%;
+            background: #ff6b35;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .product-btn:hover {
+            background: #ff5520;
+        }
+
+        /* ===== SECTION 7: PRICING TABLE ===== */
+        .pricing {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 80px 40px;
+            color: white;
+        }
+
+        .pricing .section-title {
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .pricing-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .pricing-card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .price-unit {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .price-features {
+            text-align: left;
+            margin-bottom: 30px;
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .price-features li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .price-features li:before {
+            content: "✓ ";
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .price-btn {
+            width: 100%;
+            background: white;
+            color: #f5576c;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .price-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== SECTION 8: TESTIMONIALS ===== */
+        .testimonials {
+            padding: 80px 40px;
+            background: #f9f9f9;
+        }
+
+        .testimonials .section-title {
+            margin-bottom: 50px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #ff6b35;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .testimonial-role {
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* ===== SECTION 4: FOOTER ===== */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-block h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ff6b35;
+        }
+
+        .footer-block ul {
+            list-style: none;
+        }
+
+        .footer-block ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-block a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-block a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-contact {
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #555;
+            margin: 40px 0;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+
+            .hero {
+                padding: 50px 20px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .features, .products, .pricing, .testimonials {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            footer {
+                padding: 40px 20px;
+            }
+
+            .footer-content {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SECTION 1: ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <p>🎉 LIMITED TIME OFFER: Get 30% OFF on all products! Use code: FITGRIP30</p>
+    </div>
+
+    <!-- SECTION 2: HEADER -->
+    <header>
+        <div class="logo">💪 FITGRIP</div>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#testimonials">Reviews</a>
+        </nav>
+        <button class="header-btn">Shop Now</button>
+    </header>
+
+    <!-- SECTION 5: HERO BANNER -->
+    <section class="hero">
+        <h1>Strengthen Your Grip, Transform Your Life</h1>
+        <p>Premium grip strengtheners designed for athletes, professionals, and anyone serious about hand strength and rehabilitation.</p>
+        <button class="hero-btn">Explore Our Collection</button>
+    </section>
+
+    <!-- SECTION 6: FEATURES -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Adjustable Resistance</h3>
+            <p>Customize your workout with adjustable resistance levels from 11 to 132 lbs. Perfect for beginners and professionals alike.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏥</div>
+            <h3>Medical Grade Quality</h3>
+            <p>Certified for rehabilitation and therapy. Recommended by physiotherapists and hand specialists worldwide.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Track Your Progress</h3>
+            <p>Built-in counter tracks your reps. Monitor improvements and set new goals with ease.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: FEATURED PRODUCTS -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Best Sellers</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">🔧</div>
+                <div class="product-info">
+                    <h3>Professional Grip Pro</h3>
+                    <div class="product-price">$49.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">💎</div>
+                <div class="product-info">
+                    <h3>Elite Strength Grip</h3>
+                    <div class="product-price">$69.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🏋️</div>
+                <div class="product-info">
+                    <h3>Athlete Training Pack</h3>
+                    <div class="product-price">$89.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: PRICING TABLE -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <div class="pricing-table">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$29</div>
+                <div class="price-unit">One-time purchase</div>
+                <ul class="price-features">
+                    <li>Single Grip Strengthener</li>
+                    <li>Basic adjustable resistance</li>
+                    <li>1-year warranty</li>
+                    <li>Email support</li>
+                </ul>
+                <button class="price-btn">Get Started</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Professional</h3>
+                <div class="price">$79</div>
+                <div class="price-unit">One-time purchase</div>
+                <ul class="price-features">
+                    <li>Professional Grip Pro</li>
+                    <li>11-132 lbs resistance</li>
+                    <li>2-year warranty</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="price-btn">Choose Plan</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Elite Bundle</h3>
+                <div class="price">$199</div>
+                <div class="price-unit">One-time purchase</div>
+                <ul class="price-features">
+                    <li>2 Elite Strength Grips</li>
+                    <li>Training program included</li>
+                    <li>Lifetime warranty</li>
+                    <li>VIP support 24/7</li>
+                </ul>
+                <button class="price-btn">Get Elite Bundle</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"FITGRIP has completely transformed my hand strength. After 3 months, I noticed significant improvements in my grip and overall hand endurance. Highly recommended!"</p>
+                <p class="testimonial-author">Sarah Johnson</p>
+                <p class="testimonial-role">Professional Athlete</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"As a physiotherapist, I recommend FITGRIP to all my patients recovering from hand injuries. The adjustable resistance makes it perfect for rehabilitation programs."</p>
+                <p class="testimonial-author">Dr. Michael Chen</p>
+                <p class="testimonial-role">Physical Therapist</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Best grip strengthener I've ever used! The quality is exceptional and the customer service is outstanding. Worth every penny. I'm already seeing results!"</p>
+                <p class="testimonial-author">James Rodriguez</p>
+                <p class="testimonial-role">Fitness Enthusiast</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-block">
+                <h4>About FITGRIP</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Why Choose Us</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4>Customer Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Warranty</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4>Contact Info</h4>
+                <div class="footer-contact">📧 support@fitgrip.com</div>
+                <div class="footer-contact">📞 1-800-FITGRIP</div>
+                <div class="footer-contact">📍 123 Strength Ave, Fitness City, FC 12345</div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 FITGRIP. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+</body>
+</html>
